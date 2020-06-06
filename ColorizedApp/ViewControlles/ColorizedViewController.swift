@@ -34,15 +34,21 @@ class ColorizedViewController: UIViewController, CurrentColorProtocol {
     @IBOutlet var greenTextField: UITextField!
     @IBOutlet var blueTextField: UITextField!
     
+    var secondTimeColorView: UIView!
+    
     var currentColor: UIView! {
         colorView
     }
+    
     var delegate: ColorizedViewControllerDelegate!
     
     // MARK: - Override Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        colorView.backgroundColor = secondTimeColorView.backgroundColor
+        
         
         colorView.layer.cornerRadius = 15
         

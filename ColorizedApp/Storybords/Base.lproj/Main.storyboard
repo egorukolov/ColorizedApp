@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Start Screen View Controller-->
         <scene sceneID="812-Sn-3xd">
             <objects>
-                <viewController id="7Os-eD-fGs" customClass="ViewController" customModule="ColorizedApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7Os-eD-fGs" customClass="StartScreenViewController" customModule="ColorizedApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8d6-vz-g25">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,6 +20,7 @@
                     <navigationItem key="navigationItem" id="qTL-VS-2Sc">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="square.and.pencil" catalog="system" id="EDf-mZ-C2M">
                             <connections>
+                                <action selector="ColorizedBarButtonItem:" destination="7Os-eD-fGs" id="f4g-ot-sAk"/>
                                 <segue destination="81I-ZO-RZb" kind="presentation" id="UNs-GE-puV"/>
                             </connections>
                         </barButtonItem>
@@ -151,8 +152,8 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chs-Hl-q0b">
-                                <rect key="frame" x="169" y="734" width="76" height="51"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
+                                <rect key="frame" x="171.5" y="737" width="71" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
