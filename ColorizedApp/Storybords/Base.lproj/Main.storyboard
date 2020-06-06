@@ -24,6 +24,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="firstScreenView" destination="8d6-vz-g25" id="a9E-Rg-4z4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8a-ZY-uD9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -147,12 +150,25 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chs-Hl-q0b">
+                                <rect key="frame" x="169" y="734" width="76" height="51"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="32"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButton:" destination="81I-ZO-RZb" eventType="touchUpInside" id="jHY-Ul-dfc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.14211790190000001" green="0.29647090469999998" blue="0.57609620340000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="beO-o3-vaM" firstAttribute="top" secondItem="XA4-Tk-eua" secondAttribute="bottom" constant="53" id="C9f-Ta-kg4"/>
                             <constraint firstItem="XA4-Tk-eua" firstAttribute="top" secondItem="mJ5-le-6xx" secondAttribute="top" constant="34" id="OhT-Yc-bMi"/>
+                            <constraint firstItem="mJ5-le-6xx" firstAttribute="bottom" secondItem="chs-Hl-q0b" secondAttribute="bottom" constant="77" id="Php-8c-0SB"/>
                             <constraint firstAttribute="trailing" secondItem="beO-o3-vaM" secondAttribute="trailing" constant="16" id="cay-6G-G64"/>
+                            <constraint firstItem="chs-Hl-q0b" firstAttribute="centerX" secondItem="k1d-Ry-QIk" secondAttribute="centerX" id="jKf-jb-iYv"/>
                             <constraint firstItem="mJ5-le-6xx" firstAttribute="trailing" secondItem="XA4-Tk-eua" secondAttribute="trailing" constant="16" id="jMd-S2-jEC"/>
                             <constraint firstItem="XA4-Tk-eua" firstAttribute="leading" secondItem="mJ5-le-6xx" secondAttribute="leading" constant="16" id="kP0-h5-wSG"/>
                             <constraint firstItem="beO-o3-vaM" firstAttribute="leading" secondItem="mJ5-le-6xx" secondAttribute="leading" constant="16" id="xXY-Nb-xRH"/>

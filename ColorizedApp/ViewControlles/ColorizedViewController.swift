@@ -8,7 +8,15 @@
 
 import UIKit
 
-class ColorizedViewController: UIViewController {
+protocol CurrentColorProtocol {
+    var currentColor: UIView! { get }
+}
+
+protocol ColorizedViewControllerDelegate {
+    func saveColor(_ color: UIView)
+}
+
+class ColorizedViewController: UIViewController, CurrentColorProtocol {
 
     // MARK: - IB Outlets
     
@@ -25,6 +33,11 @@ class ColorizedViewController: UIViewController {
     @IBOutlet var redTextField: UITextField!
     @IBOutlet var greenTextField: UITextField!
     @IBOutlet var blueTextField: UITextField!
+    
+    var currentColor: UIView! {
+        colorView
+    }
+    var delegate: ColorizedViewControllerDelegate!
     
     // MARK: - Override Methods
     
@@ -53,6 +66,12 @@ class ColorizedViewController: UIViewController {
         
         setColor()
     }
+    
+    @IBAction func doneButton(_ sender: UIButton) {
+        delegate.saveColor(currentColor)
+        dismiss(animated: true)
+    }
+    
     
     // MARK: - Private Methods
     

@@ -10,11 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var firstScreenView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
-
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let newColorVC = segue.destination as! ColorizedViewController
+        newColorVC.delegate = self
+    }
 }
 
+extension ViewController: ColorizedViewControllerDelegate {
+    func saveColor(_ color: UIView) {
+        firstScreenView.backgroundColor = color.backgroundColor
+    }
+}
