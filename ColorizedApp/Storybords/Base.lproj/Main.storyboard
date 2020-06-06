@@ -10,7 +10,6 @@
         <!--View Controller-->
         <scene sceneID="812-Sn-3xd">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z8a-ZY-uD9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="7Os-eD-fGs" customClass="ViewController" customModule="ColorizedApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8d6-vz-g25">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -26,6 +25,7 @@
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z8a-ZY-uD9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="133.59999999999999" y="132.68365817091455"/>
         </scene>
@@ -45,10 +45,10 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="beO-o3-vaM">
-                                <rect key="frame" x="16" y="259" width="382" height="110"/>
+                                <rect key="frame" x="16" y="259" width="382" height="112"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="fxd-Sy-QJ9">
-                                        <rect key="frame" x="0.0" y="4.5" width="48" height="101"/>
+                                        <rect key="frame" x="0.0" y="5.5" width="48" height="101"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jql-Fl-21K">
                                                 <rect key="frame" x="0.0" y="0.0" width="48" height="17"/>
@@ -74,7 +74,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ubN-u0-eWb">
-                                        <rect key="frame" x="56" y="4.5" width="30" height="101"/>
+                                        <rect key="frame" x="56" y="5.5" width="30" height="101"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otj-oa-baZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="17"/>
@@ -100,27 +100,50 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zhs-h3-ygi">
-                                        <rect key="frame" x="94" y="0.0" width="288" height="110"/>
+                                        <rect key="frame" x="94" y="1" width="225" height="110"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.05000000074505806" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="nUZ-1Z-wBm">
-                                                <rect key="frame" x="-2" y="0.0" width="292" height="31"/>
+                                                <rect key="frame" x="-2" y="0.0" width="229" height="31"/>
                                                 <connections>
                                                     <action selector="rgbSlider:" destination="81I-ZO-RZb" eventType="valueChanged" id="xb5-Al-EKp"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.26600000262260437" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="WFf-5S-sLw">
-                                                <rect key="frame" x="-2" y="40" width="292" height="31"/>
+                                                <rect key="frame" x="-2" y="40" width="229" height="31"/>
                                                 <connections>
                                                     <action selector="rgbSlider:" destination="81I-ZO-RZb" eventType="valueChanged" id="k9F-Lo-0CV"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.49399998784065247" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jVY-Gh-2YH">
-                                                <rect key="frame" x="-2" y="80" width="292" height="31"/>
+                                                <rect key="frame" x="-2" y="80" width="229" height="31"/>
                                                 <connections>
                                                     <action selector="rgbSlider:" destination="81I-ZO-RZb" eventType="valueChanged" id="FfI-SJ-eQq"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Whu-wO-aQ9">
+                                        <rect key="frame" x="327" y="0.0" width="55" height="112"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xQw-Ac-h4R">
+                                                <rect key="frame" x="0.0" y="0.0" width="55" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="tel"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fQm-8k-Dgq">
+                                                <rect key="frame" x="0.0" y="39" width="55" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="tel"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sDD-7X-sgk">
+                                                <rect key="frame" x="0.0" y="78" width="55" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="tel"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="55" id="g5f-t9-w1y"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -139,21 +162,23 @@
                     <connections>
                         <outlet property="blueLabel" destination="AqG-G3-Re4" id="xIO-wv-tb3"/>
                         <outlet property="blueSlider" destination="jVY-Gh-2YH" id="9zJ-Pz-kan"/>
+                        <outlet property="blueTextField" destination="sDD-7X-sgk" id="8Ye-xW-kMQ"/>
                         <outlet property="colorView" destination="XA4-Tk-eua" id="14L-2s-7yf"/>
                         <outlet property="greenLabel" destination="lNb-BW-De9" id="hcQ-Ft-N5Q"/>
                         <outlet property="greenSlider" destination="WFf-5S-sLw" id="Fx4-1F-CFZ"/>
+                        <outlet property="greenTextField" destination="fQm-8k-Dgq" id="df6-bf-Nlq"/>
                         <outlet property="redLabel" destination="otj-oa-baZ" id="5aq-RD-fZz"/>
                         <outlet property="redSlider" destination="nUZ-1Z-wBm" id="BOQ-KQ-MXr"/>
+                        <outlet property="redTextField" destination="xQw-Ac-h4R" id="Isk-3w-zhP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2dW-ug-4F9" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919" y="133"/>
+            <point key="canvasLocation" x="918.84057971014499" y="132.58928571428572"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3iC-K5-4XG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="40Y-fk-c0R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="caR-kd-n2p" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cNl-vD-qtm">
@@ -165,6 +190,7 @@
                         <segue destination="7Os-eD-fGs" kind="relationship" relationship="rootViewController" id="dex-vX-wZy"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="40Y-fk-c0R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-649" y="133"/>
         </scene>
