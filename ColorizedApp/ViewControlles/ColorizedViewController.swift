@@ -16,7 +16,7 @@ protocol ColorizedViewControllerDelegate {
     func saveColor(_ color: UIView)
 }
 
-class ColorizedViewController: UIViewController, CurrentColorProtocol, UITextFieldDelegate {
+class ColorizedViewController: UIViewController, CurrentColorProtocol {
 
     // MARK: - IB Outlets
     
@@ -47,10 +47,28 @@ class ColorizedViewController: UIViewController, CurrentColorProtocol, UITextFie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(doneClicked))
+        
+        toolbar.setItems([flexibleSpace,doneButton], animated: false)
+        
+        redTextField.inputAccessoryView = toolbar
+        greenTextField.inputAccessoryView = toolbar
+        blueTextField.inputAccessoryView = toolbar
+        
         colorView.layer.cornerRadius = 15
         
         redSlider.tintColor = .red
         greenSlider.tintColor = .green
+        
+//        self.redTextField.delegate = self
+//        self.greenTextField.delegate = self
+//        self.blueTextField.delegate = self
         
         setColor()
         
@@ -60,11 +78,14 @@ class ColorizedViewController: UIViewController, CurrentColorProtocol, UITextFie
         setValueForTextField(for: redTextField, greenTextField, blueTextField)
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
+    
+    @objc func doneClicked() {
+        
         view.endEditing(true)
         
     }
+    
+    
     
     // MARK: - IB Actions
     
@@ -88,11 +109,6 @@ class ColorizedViewController: UIViewController, CurrentColorProtocol, UITextFie
     }
     
 
-    // метод для передачи вносимых значений в слайдеры и лейблы
-    
-     func textFieldDidEndEditing(_ textField: UITextField) {
-      
-    }
     
     
     @IBAction func valuesTextField(_ sender: UITextField) {
@@ -159,3 +175,18 @@ class ColorizedViewController: UIViewController, CurrentColorProtocol, UITextFie
    
 }
 
+extension ColorizedViewController: UITextFieldDelegate {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+        
+    }
+    
+    // метод для передачи вносимых значений в слайдеры и лейблы
+    
+     func textFieldDidEndEditing(_ textField: UITextField) {
+            
+    }
+    
+}
