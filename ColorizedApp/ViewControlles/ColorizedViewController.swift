@@ -9,15 +9,15 @@
 import UIKit
 
 protocol CurrentColorProtocol {
-    var currentColor: UIView! { get }
+    var currentColor: UIColor! { get }
 }
 
 protocol ColorizedViewControllerDelegate {
-    func saveColor(_ color: UIView)
+    func saveColor(_ color: UIColor)
 }
 
 class ColorizedViewController: UIViewController, CurrentColorProtocol {
-
+    
     // MARK: - IB Outlets
     
     @IBOutlet weak var colorView: UIView!
@@ -34,10 +34,10 @@ class ColorizedViewController: UIViewController, CurrentColorProtocol {
     @IBOutlet var greenTextField: UITextField!
     @IBOutlet var blueTextField: UITextField!
     
-    var secondTimeColorView: UIView!
+    var secondTimeColorView: UIColor!
     
-    var currentColor: UIView! {
-        colorView
+    var currentColor: UIColor! {
+        colorView.backgroundColor
     }
     
     var delegate: ColorizedViewControllerDelegate!
@@ -47,7 +47,7 @@ class ColorizedViewController: UIViewController, CurrentColorProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        // Добовление кнопки Done над клавиатурой
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         
@@ -66,26 +66,18 @@ class ColorizedViewController: UIViewController, CurrentColorProtocol {
         redSlider.tintColor = .red
         greenSlider.tintColor = .green
         
-//        self.redTextField.delegate = self
-//        self.greenTextField.delegate = self
-//        self.blueTextField.delegate = self
-        
         setColor()
-        
         
         setValue(for: redLabel, greenLabel, blueLabel)
         
         setValueForTextField(for: redTextField, greenTextField, blueTextField)
     }
     
-    
     @objc func doneClicked() {
         
         view.endEditing(true)
         
     }
-    
-    
     
     // MARK: - IB Actions
     
@@ -94,22 +86,19 @@ class ColorizedViewController: UIViewController, CurrentColorProtocol {
         switch sender.tag {
             
         case 0: redLabel.text = string(from: sender);
-                redTextField.text = string(from: sender)
+        redTextField.text = string(from: sender)
             
         case 1: greenLabel.text = string(from: sender);
-                greenTextField.text = string(from: sender)
+        greenTextField.text = string(from: sender)
             
         case 2: blueLabel.text = string(from: sender);
-                blueTextField.text = string(from: sender)
-        
+        blueTextField.text = string(from: sender)
+            
         default: break
         }
         
         setColor()
     }
-    
-
-    
     
     @IBAction func valuesTextField(_ sender: UITextField) {
         switch sender.tag {
@@ -150,29 +139,29 @@ class ColorizedViewController: UIViewController, CurrentColorProtocol {
             case 0: redLabel.text = string(from: redSlider)
             case 1: greenLabel.text = string(from: greenSlider)
             case 2: blueLabel.text = string(from: blueSlider)
-            
+                
             default: break
             }
         }
     }
     
     private func setValueForTextField(for texts: UITextField...) {
-            texts.forEach { text in
-                switch text.tag {
-                case 0: redTextField.text = string(from: redSlider)
-                case 1: greenTextField.text = string(from: greenSlider)
-                case 2: blueTextField.text = string(from: blueSlider)
-
-                default: break
-                }
+        texts.forEach { text in
+            switch text.tag {
+            case 0: redTextField.text = string(from: redSlider)
+            case 1: greenTextField.text = string(from: greenSlider)
+            case 2: blueTextField.text = string(from: blueSlider)
+                
+            default: break
             }
         }
-        
-
+    }
+    
+    
     private func string(from slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
     }
-   
+    
 }
 
 extension ColorizedViewController: UITextFieldDelegate {
@@ -184,9 +173,9 @@ extension ColorizedViewController: UITextFieldDelegate {
     }
     
     // метод для передачи вносимых значений в слайдеры и лейблы
-    
-     func textFieldDidEndEditing(_ textField: UITextField) {
-            
-    }
+//
+//     func textFieldDidEndEditing(_ textField: UITextField) {
+//
+//    }
     
 }

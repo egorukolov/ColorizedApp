@@ -23,18 +23,17 @@ class StartScreenViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let newColorVC = segue.destination as! ColorizedViewController
-        newColorVC.delegate = self
-        
-        newColorVC.secondTimeColorView = firstScreenView
+        if let newColorVC = segue.destination as? ColorizedViewController {
+            newColorVC.secondTimeColorView = self.view.backgroundColor
+            newColorVC.delegate = self
+            
+            
+        }
     }
 }
 
- 
-
-
 extension StartScreenViewController: ColorizedViewControllerDelegate {
-    func saveColor(_ color: UIView) {
-        firstScreenView.backgroundColor = color.backgroundColor
+    func saveColor(_ color: UIColor) {
+        self.firstScreenView.backgroundColor = color
     }
 }
